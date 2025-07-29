@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPEY - Business Plan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+        
+        .slide {
+            padding: 60px 50px;
+            min-height: 297mm;
+            page-break-after: always;
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            overflow: hidden;
+        }
+        
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #000000, #404040, #000000);
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            background: rgba(0,0,0,0.05);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #666;
+            backdrop-filter: blur(10px);
+        }
+        
+        .slide-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        
+        .slide-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #000000, #404040);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            font-size: 24px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #000000;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+        
+        h2 {
+            font-size: 1.6em;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #1a1a1a;
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+        
+        p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #4a5568;
+            font-weight: 400;
+        }
+        
+        ul {
+            margin-left: 0;
+            margin-bottom: 25px;
+        }
+        
+        li {
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            color: #4a5568;
+            list-style: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #000000;
+            font-weight: 600;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .logo {
+            font-size: 5.5em;
+            font-weight: 800;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #000000, #404040);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.03em;
+        }
+        
+        .tagline {
+            font-size: 1.4em;
+            color: #4a5568;
+            margin-bottom: 60px;
+            font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .highlight-card {
+            background: rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: rgb(255, 255, 255);
+            border: 3px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 35px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Styles pour la page 2 sobre */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .problem-card {
+            background: linear-gradient(135deg, #f1f3f4 0%, #dee2e6 100%);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #e9ecef 0%, #ced4da 100%);
+        }
+        
+        .problem-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .problem-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .result-section {
+            background: linear-gradient(135deg, #343a40 0%, #495057 100%);
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .costs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .cost-item {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.1);
+            color: white;
+        }
+        
+        .cost-icon {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        /* Media Queries pour le responsive mobile */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px 20px;
+                min-height: auto;
+            }
+            
+            .slide-number {
+                top: 15px;
+                right: 20px;
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+            
+            .slide-header {
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .slide-icon {
+                width: 50px;
+                height: 50px;
+                margin-right: 0;
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                text-align: center;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+                text-align: center;
+            }
+            
+            h3 {
+                font-size: 1.1em;
+            }
+            
+            p {
+                font-size: 0.95em;
+            }
+            
+            .hero-section {
+                padding: 40px 0;
+            }
+            
+            .logo {
+                font-size: 3em;
+            }
+            
+            .tagline {
+                font-size: 1.1em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin: 20px 0;
+            }
+            
+            .stat-card {
+                padding: 20px;
+            }
+            
+            .highlight-card {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin: 20px 0;
+            }
+            
+            .problem-card {
+                padding: 20px;
+            }
+            
+            .costs-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .cost-item {
+                padding: 15px;
+            }
+            
+            .result-section {
+                padding: 25px;
+                margin: 20px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .slide {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            .logo {
+                font-size: 2.5em;
+            }
+            
+            .tagline {
+                font-size: 1em;
+            }
+            
+            .stat-card {
+                padding: 15px;
+            }
+            
+            .highlight-card {
+                padding: 15px;
+            }
+            
+            .problem-card {
+                padding: 15px;
+            }
+            
+            .result-section {
+                 padding: 20px;
+             }
+             
+             .phase-container {
+                 grid-template-columns: 1fr;
+                 gap: 20px;
+                 margin: 20px 0;
+             }
+             
+             .phase-card {
+                 padding: 20px;
+             }
+             
+             .competitor-grid {
+                 grid-template-columns: 1fr;
+                 gap: 15px;
+                 margin: 20px 0;
+             }
+             
+             .competitor-card {
+                 padding: 20px;
+             }
+             
+             .team-grid {
+                 grid-template-columns: 1fr;
+                 gap: 20px;
+                 margin: 20px 0;
+             }
+             
+             .team-card {
+                 padding: 25px;
+             }
+             
+             .funding-breakdown {
+                 padding: 20px;
+                 margin: 20px 0;
+             }
+             
+             .funding-item {
+                 flex-direction: column;
+                 text-align: center;
+                 gap: 10px;
+                 padding: 15px 0;
+             }
+             
+             .business-table {
+                 font-size: 0.85em;
+             }
+             
+             .business-table th,
+              .business-table td {
+                  padding: 12px 8px;
+              }
+              
+              .usp-features {
+                  grid-template-columns: 1fr;
+                  gap: 15px;
+              }
+              
+              .usp-feature {
+                  padding: 15px;
+                  font-size: 0.9em;
+              }
+              
+              .vision-quote {
+                  font-size: 1.3em;
+                  padding: 20px;
+                  margin: 20px 0;
+              }
+              
+              .timeline-item {
+                  margin-bottom: 20px;
+              }
+              
+              .timeline-content {
+                  padding: 15px;
+              }
+              
+              .timeline-period {
+                  font-size: 1em;
+              }
+              
+              .simulator-container {
+                  padding: 15px;
+              }
+              
+              .simulator-controls {
+                  flex-direction: column;
+                  gap: 15px;
+              }
+              
+              .control-group {
+                  margin-bottom: 15px;
+              }
+              
+              .results-grid {
+                   grid-template-columns: 1fr;
+                   gap: 15px;
+               }
+               
+               /* Section BILAN TOTAL responsive */
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] {
+                   margin-left: 2% !important;
+                   margin-right: 2% !important;
+                   padding: 20px !important;
+               }
+               
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="display: grid; grid-template-columns: repeat(3, 1fr)"] {
+                   grid-template-columns: 1fr !important;
+                   gap: 15px !important;
+               }
+               
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="padding: 25px"] {
+                   padding: 15px !important;
+               }
+               
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="padding: 30px"] {
+                   padding: 20px !important;
+               }
+               
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="font-size: 2em"] {
+                   font-size: 1.5em !important;
+               }
+               
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="font-size: 2.5em"] {
+                   font-size: 1.8em !important;
+               }
+           }
+           
+           @media (max-width: 480px) {
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] {
+                   margin-left: 0 !important;
+                   margin-right: 0 !important;
+                   padding: 15px !important;
+               }
+               
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="padding: 25px"], 
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="padding: 30px"] {
+                   padding: 12px !important;
+               }
+               
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="font-size: 1.2em"] {
+                   font-size: 1em !important;
+               }
+               
+               .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="font-size: 1.3em"] {
+                    font-size: 1em !important;
+                }
+                
+                .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="font-size: 2em"] {
+                    font-size: 1.3em !important;
+                }
+                
+                .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="font-size: 2.5em"] {
+                    font-size: 1.5em !important;
+                }
+                
+                .highlight-card[style*="background: linear-gradient(135deg, #000000 0%, #2d3748 100%)"] div[style*="font-size: 1em"] {
+                    font-size: 0.85em !important;
+                }
+                
+                /* Responsive pour les sections Impact financier et Impact annuel */
+                div[style*="display: grid; grid-template-columns: repeat(3, 1fr)"] {
+                    grid-template-columns: 1fr !important;
+                    gap: 15px !important;
+                }
+                
+                div[style*="display: grid; grid-template-columns: repeat(3, 1fr)"] > div {
+                    padding: 15px !important;
+                }
+                
+                div[style*="display: grid; grid-template-columns: repeat(3, 1fr)"] div[style*="font-size: 2em"] {
+                    font-size: 1.4em !important;
+                }
+                
+                div[style*="display: grid; grid-template-columns: repeat(3, 1fr)"] div[style*="font-size: 1.8em"] {
+                    font-size: 1.3em !important;
+                }
+                
+                div[style*="display: grid; grid-template-columns: repeat(3, 1fr)"] div[style*="font-size: 1.5em"] {
+                    font-size: 1.2em !important;
+                }
+                
+                div[style*="display: grid; grid-template-columns: repeat(3, 1fr)"] div[style*="font-size: 1.4em"] {
+                    font-size: 1.1em !important;
+                }
+                
+                div[style*="display: grid; grid-template-columns: repeat(3, 1fr)"] div[style*="font-size: 1.3em"] {
+                    font-size: 1em !important;
+                }
+                
+                /* Responsive pour les grilles de répartition des comportements clients */
+                div[style*="display: grid; grid-template-columns: repeat(2, 1fr)"] {
+                    grid-template-columns: 1fr !important;
+                    gap: 15px !important;
+                }
+                
+                /* Responsive pour la section Avantages pour la ville */
+                .slide div[style*="grid-template-columns: repeat(2, 1fr); gap: 25px"] {
+                    grid-template-columns: 1fr !important;
+                    gap: 15px !important;
+                }
+                
+                .slide h3[style*="font-size: 1.1em"] {
+                    font-size: 1em !important;
+                }
+                
+                .slide ul[style*="font-size: 0.9em"] {
+                    font-size: 0.8em !important;
+                }
+                
+                .slide h2[style*="font-size: 1.3em"] {
+                    font-size: 1.1em !important;
+                }
+                
+                .slide p[style*="font-size: 1.1em"] {
+                    font-size: 0.95em !important;
+                }
+                
+                /* Responsive pour la section Clara - Projet typique coworker */
+                .highlight-card[style*="padding: 40px"] {
+                    padding: 20px !important;
+                }
+                
+                .highlight-card h2[style*="font-size: 1.6em"] {
+                    font-size: 1.3em !important;
+                }
+                
+                .highlight-card p[style*="font-size: 1.2em"] {
+                    font-size: 1em !important;
+                }
+                
+                .highlight-card h3[style*="font-size: 1.2em"] {
+                    font-size: 1em !important;
+                }
+                
+                .highlight-card h3[style*="font-size: 1.3em"] {
+                    font-size: 1.1em !important;
+                }
+                
+                .highlight-card div[style*="padding: 25px"] {
+                    padding: 15px !important;
+                }
+                
+                .highlight-card div[style*="padding: 30px"] {
+                    padding: 20px !important;
+                }
+                
+                .highlight-card table th,
+                .highlight-card table td {
+                    padding: 8px !important;
+                    font-size: 0.9em !important;
+                }
+            }
+            
+            .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #000000, #404040);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            border-color: rgba(0,0,0,0.12);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #000000;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 0.95em;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .business-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: rgba(255,255,255,0.7);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+        
+        .business-table th,
+        .business-table td {
+            padding: 20px 25px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        
+        .business-table th {
+            background: rgba(0,0,0,0.04);
+            color: #1a1a1a;
+            font-weight: 600;
+            font-size: 0.95em;
+            letter-spacing: 0.02em;
+        }
+        
+        .business-table tr:hover {
+            background: rgba(0,0,0,0.02);
+        }
+        
+        .business-table td {
+            font-size: 1em;
+            color: #4a5568;
+        }
+        
+        .phase-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .phase-card {
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 35px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #000000, #404040);
+        }
+        
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .phase-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        
+        .competitor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .competitor-card {
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .competitor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+        
+        .competitor-name {
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .competitor-card p {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        
+        .funding-breakdown {
+            background: rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            backdrop-filter: blur(20px);
+        }
+        
+        .funding-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            font-size: 1.05em;
+        }
+        
+        .funding-item:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            padding-top: 25px;
+            margin-top: 15px;
+            border-top: 2px solid rgba(0,0,0,0.1);
+        }
+        
+        .amount {
+            font-weight: 600;
+            color: #000000;
+            font-size: 1.1em;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .team-card {
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .team-role {
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .team-name {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        .roadmap-timeline {
+            margin: 50px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+        
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #000000, #404040);
+            border-radius: 50%;
+            margin-right: 25px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-period {
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .kpi-card {
+            background: linear-gradient(135deg, #000000, #404040);
+            color: white;
+            padding: 35px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .kpi-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        .kpi-title {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .kpi-value {
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .usp-highlight {
+            background: rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .usp-highlight h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #000000;
+        }
+        
+        .usp-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .usp-feature {
+            font-weight: 600;
+            color: #4a5568;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 25px;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+        
+        .vision-quote {
+            font-size: 1.6em;
+            font-weight: 300;
+            text-align: center;
+            color: #000000;
+            margin: 50px 0;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        
+        .vision-quote::before,
+        .vision-quote::after {
+            content: '"';
+            font-size: 2em;
+            color: #404040;
+            font-weight: 400;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .slide {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Slide 1: Page de couverture -->
+        <div class="slide">
+            <div class="slide-number">1 / 16</div>
+            <div class="hero-section">
+                <div class="logo">POPEY</div>
+                <div class="tagline">Le premier coffeeshop qui transforme chaque café en investissement local</div>
+                <img src="images/Popey!!.png" alt="Logo Popey" style="width: 250px; height: auto; margin: 30px auto; display: block; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
+            
+        </div>
+
+        <!-- Slide 2: Problème -->
+    <div class="slide">
+        <div class="slide-number">2 / 16</div>
+        <div class="slide-header">
+            <div class="slide-icon">⚠️</div>
+            <h1 style="background: linear-gradient(135deg, #212529 0%, #495057 100%); color: #fff; padding: 20px; border-radius: 15px; text-align: center; font-weight: bold; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); border: 2px solid #343a40;">Le Problème Identifié</h1>
+        </div>
+        
+        <!-- Section principale -->
+        <div class="highlight-card">
+            <h2 style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">Contexte : <span style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">Le Futur</span> <span style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">du Travail</span> </h2>
+            <p style="font-size: 1.1em; margin-top: 20px;">L’essor de l’IA et de l’automatisation transforme le monde professionnel.</p>
+        </div>
+        
+        <!-- Grille des problèmes -->
+        <div class="problem-grid">
+            <div class="problem-card">
+                <span class="problem-icon">😴</span>
+                <h3 class="problem-title">Moins d’emplois salariés stables</h3>
+                <p>L’automatisation<strong> remplace</strong> de nombreuses tâches.</p>
+                <p>Les entreprises privilégient la <strong>flexibilité</strong>.</p>
+            </div>
+            
+            <div class="problem-card">
+                <span class="problem-icon">🚶‍♂️</span>
+                <h3 class="problem-title">Plus de freelances et d’indépendants</h3>
+                <p>50%  <strong>des actifs européens</strong> <strong>seront indépendants </strong> d’ici 2030 (source : McKinsey).</p>
+                <p>Les travailleurs <strong>cumuleront</strong> plusieurs missions/clients.</p>
+            </div>
+            
+            <div class="problem-card">
+                <span class="problem-icon">❌ </span>
+                <h3 class="problem-title">Problèmes actuels des indépendants:</h3>
+                <p>Isolement, <strong>manque de clients, </strong> difficulté à se faire connaître.</p>
+            </div>
+            
+            <div class="problem-card">
+                <span class="problem-icon">❌</span>
+                <h3 class="problem-title">Entrepreneurs sans réseau</h3>
+                <p>Des clients cherchent des <strong>prestataires</strong> ou veulent <strong>soutenir des projets</strong> inspirants.</p>
+                <p>Espaces de coworking trop  <strong>passifs</strong>.</p>
+            </div>
+        </div>
+        
+        <!-- Section résultat -->
+        <div class="result-section">
+            <div style="font-size: 3em; margin-bottom: 20px; color: #dc3545;">💔</div>
+            <h2 style="font-size: 2em; margin-bottom: 20px; font-weight: bold; color: #f1f3f4;">CONSTAT</h2>
+            <p style="font-size: 1.2em; font-weight: 600; color: #f1f3f4;">Un nouveau type de lieu devient indispensable</p>
+            <p style="color: #f1f3f4; margin-top: 15px; padding: 15px; background: linear-gradient(135deg, #6c757d 0%, #495057 100%); border-radius: 10px; display: inline-block;">Les indépendants n’ont plus seulement besoin d’un bureau,
+mais d’un véritable écosystème local qui les aide à :</p>
+<p style="color: white;">-Se rendre visibles auprès du public,<br>
+
+- Trouver des clients sans démarchage,<br>
+
+- Financer leurs projets,<br>
+
+- Créer du lien humain.<br>
+<br>
+🎯 Les espaces de travail/coworking doivent devenir des plateformes de croissance.</p>
+        </div>
+        
+        
+        
+    </div>
+
+        <!-- Slide 3: Solution -->
+        <div class="slide">
+            <div class="slide-number">3 / 16</div>
+            <div class="slide-header">
+                <div class="slide-icon">💡</div>
+                <h1>Solution POPEY</h1>
+            </div>
+            
+            <div class="highlight-card">
+                <h2>Une expérience hybride révolutionnaire</h2>
+                <p>Popey, c'est un lieu hybride entre coffeeshop et incubateur de talents.<br>
+En son sein se melange clients lambdas et coworkers. Les clients y viennent pour l'ambiance cosy, chaleureuse et très instagramable (Robot barista et bar à croissants).<br><br>
+<img src="images/lieu2.png" alt="Mur interactif POPEY" style="width: 80%; max-width: 400px; height: auto; margin: 20px auto; display: block; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+<br>Ce qui rend Popey vraiment unique, c’est son modèle de contribution solidaire : 5 % de chaque consommation sont reversés, sans frais supplémentaires, à un coworker que le client choisit lui-même pour soutenir son projet.
+Lors du paiement, chaque client est invité à sélectionner l’initiative qu’il souhaite encourager.
+<br>Et en cas de véritable coup de cœur, il peut même investir une somme plus importante dans le projet de son choix, ouvrant droit à des avantages exclusifs ou à une participation plus active.<br><br>
+<img src="images/carte.png" alt="Mur interactif POPEY" style="width: 80%; max-width: 400px; height: auto; margin: 20px auto; display: block; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+<br><strong>Mais ce n'est pas tout :</strong><br>
+Chez Popey, les coworkers ne font pas que recevoir du soutien — ils partagent aussi leur savoir-faire.<br>
+Sur place, trois professionnels exercent directement sur le lieu : un coiffeur, une prothésiste ongulaire et un masseur (remarque : ces 3 metiers sont amenés à changer selon l'intérêt manifesté et le nombre de passage clients/jour).
+<br>Les autres coworkers, quant à eux, proposent leurs services (design, photo, coaching, plomberie, etc.) à des tarifs préférentiels, accessibles via un mur digital interactif au sein du coffeeshop.<br>
+<br><strong>Résultat :</strong><br>
+Chez Popey, les clients dégustent un très bon café, les meilleurs croissants fourrés, peuvent se faire coiffer, masser... tout en devenant mécènes,  investisseurs ou clients directs de talents locaux.<br>
+Quant aux coworkers, ils ont un endroit où travailler, tester leur offre, gagner leurs premiers revenus, et créer leur réseau et leur communauté.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <h2>Le Mur Interactif POPEY</h2>
+                <img src="images/mur6.png" alt="Mur interactif POPEY" style="width: 80%; max-width: 400px; height: auto; margin: 20px auto; display: block; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+                <br><p>Interface tactile permettant aux clients de découvrir les coworkers présents, leurs services, et de soutenir les projets locaux en temps réel.</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Avantages du Concept -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">4 / 16</div>
+                <div class="slide-icon">⭐</div>
+                <h1>Avantages du Concept</h1>
+                <p>Un écosystème gagnant-gagnant pour tous</p>
+            </div>
+            
+            <div class="highlight-card">
+                <h2>💼 Côté Coworkers</h2>
+                <div class="usp-features"> 
+                    <div class="usp-feature">
+                        <div class="usp-icon">🧭</div>
+                        <div class="usp-text">"Trouver des clients + Créer facilement du réseau"</div>
+                    </div>
+                    <div class="usp-feature">
+                        <div class="usp-icon">🧭</div>
+                        <div class="usp-text">"Dépense moyenne d'un espace coworking 5000€/an,chez Popey la dépense se transforme en gain moyen de +6000€/an "</div>
+                    </div>
+                    <div class="usp-feature">
+                        <div class="usp-icon">🤝</div>
+                        <div class="usp-text">Créer un lien économique et affectif entre les clients et les porteurs de projets</div>
+                    </div>
+                    <div class="usp-feature">
+                        <div class="usp-icon">🚀</div>
+                        <div class="usp-text">Transformer Popey en mini Kickstarter local, en live, en confiance</div>
+                    </div>
+                    <div class="usp-feature">
+                        <div class="usp-icon">🧭</div>
+                        <div class="usp-text">Popey, c'est une boussole émotionnelle du marché : "Combien de gens croient en moi, sans me connaître ?"</div>
+                    </div>
+                    
+                </div>
+                <br>
+                <h3>Test d'adhésion du public</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">Indirecte</div>
+                        <div class="stat-label">Sans sondage</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Authentique</div>
+                        <div class="stat-label">Par des gens qui ne sont pas "amis sur LinkedIn"</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Continue</div>
+                        <div class="stat-label">Feedback en temps réel</div>
+                    </div>
+                </div>
+                
+                <div class="vision-quote">
+                    <p>✅ <strong>Validation douce de l'intérêt d'un projet</strong></p>
+                    <p>Si le projet récolte vite des contributions → bon signe<br>
+                    Si ça stagne → peut-être besoin de clarifier, simplifier ou pivoter</p>
+                </div>
+                
+               
+            </div>
+            
+            <div class="highlight-card">
+                <h2>🍵 Côté Clients</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">Un lieu de détente</div>
+                        <div class="stat-label">Un coffeeshop pensait pour des clients qui veulent passer un moment de détente, se faire masser, coiffer...</div>
+                    </div>
+                    <div class="stat-card" style="background-image: url('images/cabines.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; min-height: 150px;">
+                        <div style="background: rgba(255, 255, 255, 0.6); padding: 15px; border-radius: 8px; position: relative; z-index: 1; backdrop-filter: blur(1px);">
+                            <div class="stat-number" style="color: #2d3748; font-weight: bold; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">Détente</div>
+                            </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Un lien humain</div>
+                        <div class="stat-label">Le client choisit un projet qui lui parle, il s'y attache, Il voudra suivre l'évolution de "son" projet</div>
+                    </div>
+                     <div class="stat-card" style="background-image: url('images/claraa.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; min-height: 150px;">
+                        <div style="background: rgba(255, 255, 255, 0.6); padding: 15px; border-radius: 8px; position: relative; z-index: 1; backdrop-filter: blur(1px);">
+                            <div class="stat-number" style="color: #2d3748; font-weight: bold; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">Lien</div>
+                            </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Services</div>
+                        <div class="stat-label">Services préférenciels des coworkers pour les clients Popey</div>
+                    </div>
+                    <div class="stat-card" style="background-image: url('images/mur6.png'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; min-height: 150px;">
+                        <div style="background: rgba(255, 255, 255, 0.6); padding: 15px; border-radius: 8px; position: relative; z-index: 1; backdrop-filter: blur(1px);">
+                            <div class="stat-number" style="color: #2d3748; font-weight: bold; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">Services</div>
+                           </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+           
+        </div>
+        
+        <!-- Simulateur d'Impact Section -->
+         
+        <div class="slide">
+            <div class="slide-number">5 / 16</div>
+            <div class="slide-header">
+                <div class="slide-icon">💡</div>
+                <h1>Chez Popey les coworkers ne dépensent pas de l'argent, ils en gagnent !</h1>
+               
+            </div>
+        <div class="highlight-card"; style="margin:6%">
+            <h2 style="text-align: center; margin-bottom: 20px;">1ere Source</h2>
+ <p style="text-align: center; margin-bottom: 20px;">Impact d'un seul client Popey sur la vie économique locale </p>
+            
+            <!-- Section de calcul centrée -->
+            <div style="background: rgba(0,0,0,0.02); border-radius: 15px; padding: 25px; margin-bottom: 30px;">
+                <h3 style="text-align: center; margin-bottom: 25px; color: #000000; font-size: 1.2em;">📊 Paramétre des consommations (cafés, snacks...)</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 600px; margin: 0 auto;">
+                    <div style="text-align: center;">
+                        <label style="display: block; margin-bottom: 15px; font-weight: 600; font-size: 1em; color: #2d3748;">☕ Cafés/snacks... par semaine</label>
+                        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <input type="range" id="cafes-semaine" min="1" max="20" value="5" style="width: 100%; margin-bottom: 15px; height: 8px; border-radius: 5px">
+                            <div style="font-size: 1.5em; font-weight: bold; color: #000000;"><span id="cafes-value">5</span></div>
+                            <div style="font-size: 0.9em; color: #718096;">cafés/snacks...</div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <label style="display: block; margin-bottom: 15px; font-weight: 600; font-size: 1em; color: #2d3748;">💰 Prix moyen dépensé par visite</label>
+                        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <input type="range" id="prix-cafe" min="2" max="8" step="0.5" value="3.5" style="width: 100%; margin-bottom: 15px; height: 8px; border-radius: 5px;">
+                            <div style="font-size: 1.5em; font-weight: bold; color: #000000;"><span id="prix-value">3.50</span></div>
+                            <div style="font-size: 0.9em; color: #718096;">euros</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section des résultats -->
+             <div>
+                 <h3 style="text-align: center; margin-bottom: 25px; color: #000000; font-size: 1.2em;">🎯 Impact annuel pour 1 client popey</h3>
+                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto;">
+                     <div style="background: linear-gradient(135deg, #000000 0%, #2d3748 100%); color: white; padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border: 2px solid #4a5568;">
+                         <div style="font-size: 2em; font-weight: bold; margin-bottom: 8px;" id="montant-annuel">45.50€</div>
+                         <div style="font-size: 0.9em; opacity: 0.9;">reversés aux projets locaux</div>
+                     </div>
+                     
+                     <div style="background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); color: white; padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 1px solid #718096;">
+                         <div style="font-size: 2em; font-weight: bold; margin-bottom: 8px;" id="projets-soutenus">3-4</div>
+                         <div style="font-size: 0.9em; opacity: 0.9;">projets soutenus</div>
+                     </div>
+                     
+                     <div style="background: linear-gradient(135deg, #4a5568 0%, #718096 100%); color: white; padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #a0aec0;">
+                         <div style="font-size: 2em; font-weight: bold; margin-bottom: 8px;" id="impact-social">12</div>
+                         <div style="font-size: 0.9em; opacity: 0.9;">entrepreneurs aidés</div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!-- Impact collectif avec 100 clients/jour -->
+             <div style="background: rgba(0,0,0,0.02); border-radius: 15px; padding: 25px; border-left: 5px solid #000000; margin-top: 30px;">
+                 <h4 style="text-align: center; margin-bottom: 20px; color: #000000; font-size: 1.1em;">📊 Impact pour 100 clients</h4>
+                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 700px; margin: 0 auto;">
+                     <div style="background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                         <div style="font-size: 1.4em; font-weight: bold; margin-bottom: 5px;" id="impact-mensuel-collectif">1,365€</div>
+                         <div style="font-size: 0.8em; opacity: 0.9;">reversés/mois</div>
+                     </div>
+                     <div style="background: linear-gradient(135deg, #000000 0%, #2d3748 100%); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                         <div style="font-size: 1.4em; font-weight: bold; margin-bottom: 5px; color: #ffd700;" id="impact-annuel-collectif">16,425€</div>
+                         <div style="font-size: 0.8em; opacity: 0.9; color: #ffd700;">reversés/an</div>
+                     </div>
+                     <div style="background: linear-gradient(135deg, #000000 0%, #4a5568 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; border: 2px solid #000000;">
+                         <div style="font-size: 1.4em; font-weight: bold; margin-bottom: 5px;">48</div>
+                         <div style="font-size: 0.8em; opacity: 0.9;">projets soutenus/an</div>
+                     </div>
+                 </div>
+             </div>
+             
+             <div style="text-align: center; margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); border-radius: 15px; border-left: 5px solid #000000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                 <p style="font-style: italic; color: #2d3748; font-size: 1.1em; margin: 0;">💡 <strong>En buvant simplement votre café chez POPEY, vous devenez un acteur du développement économique local !</strong></p>
+             </div>
+        </div>
+        
+        <script>
+            // Simulateur d'impact JavaScript
+            function updateSimulator() {
+                const cafesParSemaine = document.getElementById('cafes-semaine').value;
+                const prixCafe = document.getElementById('prix-cafe').value;
+                
+                // Mise à jour des valeurs affichées
+                document.getElementById('cafes-value').textContent = cafesParSemaine;
+                document.getElementById('prix-value').textContent = parseFloat(prixCafe).toFixed(2);
+                
+                // Calculs pour un client
+                const cafesParAn = cafesParSemaine * 52;
+                const montantAnnuel = (cafesParAn * prixCafe * 0.05).toFixed(2);
+                const projetsSoutenus = Math.max(1, Math.floor(montantAnnuel / 15));
+                const entrepreneursAides = Math.floor(projetsSoutenus * 1.25);
+                
+                // Mise à jour des résultats individuels
+                document.getElementById('montant-annuel').textContent = montantAnnuel + '€';
+                document.getElementById('projets-soutenus').textContent = projetsSoutenus;
+                document.getElementById('impact-social').textContent = entrepreneursAides;
+                
+                // Calculs pour l'impact collectif (100 clients/jour)
+                const clientsParJour = 100;
+                const cafesCollectifsParJour = clientsParJour * (cafesParSemaine / 7); // Moyenne quotidienne
+                const montantQuotidienCollectif = cafesCollectifsParJour * prixCafe * 0.05;
+                const montantMensuelCollectif = montantQuotidienCollectif * 30;
+                const montantAnnuelCollectif = montantQuotidienCollectif * 365;
+                const projetsAnnuelsCollectif = Math.floor(montantAnnuelCollectif / 15);
+                
+                // Mise à jour des résultats collectifs
+                  document.getElementById('impact-mensuel-collectif').textContent = Math.round(montantMensuelCollectif).toLocaleString() + '€';
+                  document.getElementById('impact-annuel-collectif').textContent = Math.round(montantAnnuelCollectif).toLocaleString() + '€';
+                 
+                 // Mise à jour du bilan total (si les éléments existent)
+                 if (document.getElementById('total-reversement-annuel')) {
+                     document.getElementById('total-reversement-annuel').textContent = Math.round(montantAnnuelCollectif).toLocaleString() + '€';
+                     updateTotalGlobal();
+                 }
+            }
+            
+            // Event listeners
+            document.getElementById('cafes-semaine').addEventListener('input', updateSimulator);
+            document.getElementById('prix-cafe').addEventListener('input', updateSimulator);
+            
+            // Initialisation
+            updateSimulator();
+        </script>
+
+         <!-- Simulateur de Participation Clients -->
+         <div class="highlight-card">
+             <h2 style="text-align: center; margin-bottom: 20px;">2eme source</h2>
+             <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em; color: #4a5568;">👥 Simulateur de financement des Clients aux Projets Coworkers</p>
+             
+             <!-- Section de paramétrage -->
+             <div style="background: rgba(0,0,0,0.02); border-radius: 15px; padding: 25px; margin-bottom: 30px;">
+                 <h3 style="text-align: center; margin-bottom: 25px; color: #000000; font-size: 1.2em;">📊 Paramètres de base</h3>
+                 
+                 <div style="max-width: 400px; margin: 0 auto; text-align: center;">
+                     <label style="display: block; margin-bottom: 15px; font-weight: 600; font-size: 1em; color: #2d3748;">👥 Nombre de clients par jour</label>
+                     <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                         <input type="range" id="clients-jour" min="50" max="300" value="100" style="width: 100%; margin-bottom: 15px; height: 8px; border-radius: 5px;">
+                         <div style="font-size: 1.5em; font-weight: bold; color: #000000;"><span id="clients-value">100</span></div>
+                         <div style="font-size: 0.9em; color: #718096;">clients/jour</div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!-- Répartition des clients -->
+             <div style="margin-bottom: 30px;">
+                 <h3 style="text-align: center; margin-bottom: 25px; color: #000000; font-size: 1.2em;">📈 Répartition des comportements clients</h3>
+                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: 0 auto;">
+                     <div style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 20px; border-radius: 12px; border-left: 4px solid #a0aec0;">
+                         <div style="font-size: 1.1em; font-weight: bold; color: #2d3748; margin-bottom: 8px;">😐 Curieux passifs (50%)</div>
+                         <div style="font-size: 0.9em; color: #4a5568; margin-bottom: 10px;">Regardent le mur ou posent une question</div>
+                         <div style="font-size: 1.2em; font-weight: bold; color: #000000;"><span id="curieux-count">50</span> personnes</div>
+                     </div>
+                     
+                     <div style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 20px; border-radius: 12px; border-left: 4px solid #718096;">
+                         <div style="font-size: 1.1em; font-weight: bold; color: #2d3748; margin-bottom: 8px;">💭 Engagés moralement (30%)</div>
+                         <div style="font-size: 0.9em; color: #4a5568; margin-bottom: 10px;">Choisissent un mentor symbolique (0€)</div>
+                         <div style="font-size: 1.2em; font-weight: bold; color: #000000;"><span id="engages-count">30</span> personnes</div>
+                     </div>
+                     
+                     <div style="background: linear-gradient(135deg, #4a5568 0%, #718096 100%); color: white; padding: 20px; border-radius: 12px; border-left: 4px solid #2d3748;">
+                         <div style="font-size: 1.1em; font-weight: bold; margin-bottom: 8px;">💵 Petits contributeurs (15%)</div>
+                         <div style="font-size: 0.9em; opacity: 0.9; margin-bottom: 10px;">Donnent 1 à 5€ (moyenne: 3€)</div>
+                         <div style="font-size: 1.2em; font-weight: bold;"><span id="petits-count">15</span> personnes</div>
+                     </div>
+                     
+                     <div style="background: linear-gradient(135deg, #000000 0%, #2d3748 100%); color: white; padding: 20px; border-radius: 12px; border-left: 4px solid #000000; border-width: 4px;">
+                         <div style="font-size: 1.1em; font-weight: bold; margin-bottom: 8px;">💰 Grands contributeurs (5%)</div>
+                         <div style="font-size: 0.9em; opacity: 0.9; margin-bottom: 10px;">Donnent 10 à 50€ (moyenne: 20€)</div>
+                         <div style="font-size: 1.2em; font-weight: bold;"><span id="grands-count">5</span> personnes</div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!-- Résultats financiers -->
+             <div>
+                 <h3 style="text-align: center; margin-bottom: 25px; color: #000000; font-size: 1.2em;">💰 Impact financier</h3>
+                 
+                 <!-- Collecte quotidienne -->
+                 <div style="margin-bottom: 25px;">
+                     <h4 style="text-align: center; margin-bottom: 15px; color: #2d3748;">📅 Collecte quotidienne</h4>
+                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 600px; margin: 0 auto;">
+                         <div style="background: linear-gradient(135deg, #4a5568 0%, #718096 100%); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                             <div style="font-size: 1.5em; font-weight: bold; margin-bottom: 5px;" id="petits-jour">45€</div>
+                             <div style="font-size: 0.8em; opacity: 0.9;">petits dons</div>
+                         </div>
+                         <div style="background: linear-gradient(135deg, #000000 0%, #2d3748 100%); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                             <div style="font-size: 1.5em; font-weight: bold; margin-bottom: 5px;" id="grands-jour">100€</div>
+                             <div style="font-size: 0.8em; opacity: 0.9;">grands dons</div>
+                         </div>
+                         <div style="background: linear-gradient(135deg, #000000 0%, #4a5568 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; border: 2px solid #000000;">
+                             <div style="font-size: 1.8em; font-weight: bold; margin-bottom: 5px;" id="total-jour">145€</div>
+                             <div style="font-size: 0.8em; opacity: 0.9;">TOTAL/JOUR</div>
+                         </div>
+                     </div>
+                 </div>
+                 
+                 <!-- Projection annuelle -->
+                 <div>
+                     <h4 style="text-align: center; margin-bottom: 15px; color: #2d3748;">📆 Projection annuelle</h4>
+                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 600px; margin: 0 auto;">
+                         <div style="background: linear-gradient(135deg, #4a5568 0%, #718096 100%); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                             <div style="font-size: 1.3em; font-weight: bold; margin-bottom: 5px;" id="petits-annuel">3,600€</div>
+                             <div style="font-size: 0.8em; opacity: 0.9;">petits dons annuels</div>
+                         </div>
+                         <div style="background: linear-gradient(135deg, #000000 0%, #2d3748 100%); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                             <div style="font-size: 1.3em; font-weight: bold; margin-bottom: 5px;" id="grands-annuel">3,000€</div>
+                             <div style="font-size: 0.8em; opacity: 0.9;">grands dons annuels</div>
+                         </div>
+                         <div style="background: linear-gradient(135deg, #000000 0%, #4a5568 100%); color: white; padding: 25px; border-radius: 12px; text-align: center; border: 3px solid #000000;">
+                             <div style="font-size: 2em; font-weight: bold; margin-bottom: 5px; color: #ffd700;" id="total-annuel">6,600€</div>
+                             <div style="font-size: 0.9em; opacity: 0.9;">TOTAL ANNUEL</div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             
+             <div style="text-align: center; margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); border-radius: 15px; border-left: 5px solid #000000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                 <p style="font-style: italic; color: #2d3748; font-size: 1.1em; margin: 0;">🚀 <strong>Nos clients deviennent des investisseurs dans l'écosystème entrepreneurial local !</strong></p>
+             </div>
+         </div>
+         
+         <!-- Simulateur de Services Coworkers -->
+         <div class="highlight-card">
+             <h2 style="text-align: center; margin-bottom: 20px;">3eme source</h2>
+             <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em; color: #4a5568;">Découvrons le potentiel de chiffre d'affaires généré par les services entre clients et coworkers</p>
+             
+             <!-- Section des hypothèses de base -->
+             <div style="background: rgba(0,0,0,0.02); border-radius: 15px; padding: 25px; margin-bottom: 30px;">
+                 <h3 style="text-align: center; margin-bottom: 25px; color: #000000; font-size: 1.2em;">🔢 Hypothèses de base</h3>
+                 
+                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: 0 auto;">
+                     <div style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 20px; border-radius: 12px; border-left: 4px solid #2d3748;">
+                         <div style="font-size: 1.1em; font-weight: bold; color: #2d3748; margin-bottom: 8px;">👥 30 coworkers sur site et un total de 100 coworkers présentés sur le mur</div>
+                         <div style="font-size: 0.9em; color: #4a5568;">proposant un service</div>
+                     </div>
+                     
+                     <div style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 20px; border-radius: 12px; border-left: 4px solid #2d3748;">
+                         <div style="font-size: 1.1em; font-weight: bold; color: #2d3748; margin-bottom: 8px;">☕ 100 clients/jour</div>
+                         <div style="font-size: 0.9em; color: #4a5568;">~2 000 à 2 500 clients/mois</div>
+                     </div>
+                     
+                     <div style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 20px; border-radius: 12px; border-left: 4px solid #2d3748;">
+                         <div style="font-size: 1.1em; font-weight: bold; color: #2d3748; margin-bottom: 8px;">🖼️ Mur des membres visible</div>
+                         <div style="font-size: 0.9em; color: #4a5568;">fiche métier + prénom/nom = forte exposition</div>
+                     </div>
+                     
+                     <div style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 20px; border-radius: 12px; border-left: 4px solid #2d3748;">
+                         <div style="font-size: 1.1em; font-weight: bold; color: #2d3748; margin-bottom: 8px;">🤝 Ambiance conviviale</div>
+                         <div style="font-size: 0.9em; color: #4a5568;">favorisant les échanges</div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!-- Section d'estimation réaliste -->
+             <div style="margin-bottom: 30px;">
+                 <h3 style="text-align: center; margin-bottom: 25px; color: #000000; font-size: 1.2em;">🔍 Estimation réaliste</h3>
+                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto;">
+                     <div style="background: linear-gradient(135deg, #4a5568 0%, #718096 100%); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                         <div style="font-size: 1.5em; font-weight: bold; margin-bottom: 8px;">60-70</div>
+                         <div style="font-size: 0.9em; opacity: 0.9;">coworkers avec manifestations d'intérêt</div>
+                     </div>
+                     
+                     <div style="background: linear-gradient(135deg, #000000 0%, #2d3748 100%); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                         <div style="font-size: 1.5em; font-weight: bold; margin-bottom: 8px;">30-50</div>
+                         <div style="font-size: 0.9em; opacity: 0.9;">coworkers avec au moins 1 client/mois</div>
+                     </div>
+                     
+                     <div style="background: linear-gradient(135deg, #000000 0%, #4a5568 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; border: 2px solid #000000;">
+                         <div style="font-size: 1.5em; font-weight: bold; margin-bottom: 8px;">150€</div>
+                         <div style="font-size: 0.9em; opacity: 0.9;">montant moyen par mission</div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!-- Résultats financiers -->
+             <div>
+                 <h3 style="text-align: center; margin-bottom: 25px; color: #000000; font-size: 1.2em;">💰 Chiffre d'affaires généré</h3>
+                 
+                 <!-- Résultat mensuel -->
+                 <div style="margin-bottom: 25px;">
+                     <h4 style="text-align: center; margin-bottom: 15px; color: #2d3748;">📅 Résultat mensuel</h4>
+                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 600px; margin: 0 auto;">
+                         <div style="background: linear-gradient(135deg, #4a5568 0%, #718096 100%); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                             <div style="font-size: 1.3em; font-weight: bold; margin-bottom: 5px;">40</div>
+                             <div style="font-size: 0.8em; opacity: 0.9;">coworkers actifs</div>
+                         </div>
+                         <div style="background: linear-gradient(135deg, #000000 0%, #2d3748 100%); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                             <div style="font-size: 1.3em; font-weight: bold; margin-bottom: 5px;">150€</div>
+                             <div style="font-size: 0.8em; opacity: 0.9;">par mission</div>
+                         </div>
+                         <div style="background: linear-gradient(135deg, #000000 0%, #4a5568 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; border: 2px solid #000000;">
+                             <div style="font-size: 1.5em; font-weight: bold; margin-bottom: 5px;">6,000€</div>
+                             <div style="font-size: 0.8em; opacity: 0.9;">CA mensuel</div>
+                         </div>
+                     </div>
+                 </div>
+                 
+                 <!-- Résultat annuel -->
+                 <div>
+                     <h4 style="text-align: center; margin-bottom: 15px; color: #2d3748;">📆 Résultat annuel</h4>
+                     <div style="max-width: 400px; margin: 0 auto;">
+                         <div style="background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); color: #000000; padding: 30px; border-radius: 15px; text-align: center; border: 3px solid #ffd700; box-shadow: 0 0 20px rgba(255,215,0,0.3);">
+                             <div style="font-size: 1.3em; margin-bottom: 10px; font-weight: bold;">💼 CHIFFRE D'AFFAIRES COWORKERS</div>
+                             <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 5px;">72,000€</div>
+                             <div style="font-size: 1em; font-weight: bold;">généré par les clients Popey</div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             
+             <div style="text-align: center; margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); border-radius: 15px; border-left: 5px solid #000000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                 <p style="font-style: italic; color: #2d3748; font-size: 1.1em; margin: 0;">🎯 <strong>POPEY devient un véritable accélérateur d'affaires pour les entrepreneurs locaux !</strong></p>
+             </div>
+         </div>
+         
+         <!-- Section de conclusion des trois simulateurs -->
+         <div class="highlight-card" style="margin-top: 40px;  background: linear-gradient(135deg, #000000 0%, #2d3748 100%); color: white;">
+             <h2 style="text-align: center; margin-bottom: 30px; color: white; font-size: 1.5em;">💰 BILAN TOTAL ANNUEL POUR LES COWORKERS</h2>
+             <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em; opacity: 0.9;">Cumul des revenus générés par les trois mécanismes de financement</p>
+             
+             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; margin-bottom: 25px;">
+                 <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2);">
+                     <div style="font-size: 1.1em; margin-bottom: 8px; opacity: 0.8;">💵 Reversement 5% cafés/snacks</div>
+                     <div style="font-size: 1.8em; font-weight: bold; margin-bottom: 5px;" id="total-reversement-annuel">16,425€</div>
+                     <div style="font-size: 0.8em; opacity: 0.7;">pour projets locaux</div>
+                 </div>
+                 
+                 <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2);">
+                     <div style="font-size: 1.1em; margin-bottom: 8px; opacity: 0.8;">🎯 Financement participatif</div>
+                     <div style="font-size: 1.8em; font-weight: bold; margin-bottom: 5px;" id="total-participatif-annuel">6,600€</div>
+                     <div style="font-size: 0.8em; opacity: 0.7;">dons directs clients</div>
+                 </div>
+             </div>
+             
+             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto;">
+                 <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2);">
+                     <div style="font-size: 1.1em; margin-bottom: 8px; opacity: 0.8;">🤝 Services coworkers</div>
+                     <div style="font-size: 1.8em; font-weight: bold; margin-bottom: 5px;">72,000€</div>
+                     <div style="font-size: 0.8em; opacity: 0.7;">chiffre d'affaires généré</div>
+                 </div>
+                 
+                 <div style="background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); color: #000000; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid #ffd700; box-shadow: 0 0 20px rgba(255,215,0,0.3);">
+                     <div style="font-size: 1.2em; margin-bottom: 8px; font-weight: bold;">🏆 TOTAL COWORKERS</div>
+                     <div style="font-size: 2.2em; font-weight: bold; margin-bottom: 5px;" id="total-global-annuel">95,025€</div>
+                     <div style="font-size: 0.9em; font-weight: bold;">revenus annuels générés</div>
+                 </div>
+             </div>
+      
+         </div>
+         <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em; opacity: 0.9;">Devenir un coworker Popey, c'est la garantie d'être vu, soutenu, de financer ses projets et de trouver de nouveaux clients.</p>
+         
+        </div>
+        
+        <!-- Slide 6: Projet typique d'un coworker Popey -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">6 / 16</div>
+                <div class="slide-icon">👩‍💻</div>
+                <h1>Projet typique d'un coworker Popey</h1>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #000000 0%, #2d3748 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 30px; text-align: center;">
+                <p style="font-size: 1.2em; margin: 0; font-weight: 500; color: white;">Imaginez Clara, graphiste indépendante de 32 ans, installée chez Popey depuis 3 mois.</p>
+                <p style="font-size: 1em; margin: 10px 0 0 0; opacity: 0.9; color: white;">Elle propose la refonte d'identités visuelles pour artisans, commerçants ou startups locales.</p>
+            </div>
+            
+            <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em; color: #4a5568; font-weight: 500;">Grâce à Popey, Clara bénéficie de trois leviers de revenus complémentaires :</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 25px; margin-bottom: 30px;">
+                <div class="highlight-card" style="padding: 25px;">
+                    <h3 style="color: #2d3748; margin-bottom: 15px; font-size: 1.2em;">💼 1. Ses services réservés par les clients Popey</h3>
+                    <ul style="font-size: 1em; line-height: 1.6; margin: 0; padding-left: 20px; color: #4a5568;">
+                        <li>Chaque mois, des clients repèrent son profil sur le Mur des Membres</li>
+                        <li>Certains la contactent pour une carte de visite, un logo ou un post Instagram</li>
+                        <li><strong>→ 1 à 3 clients par mois lui réservent une prestation : env. 300 à 500 €/mois</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-card" style="padding: 25px;">
+                    <h3 style="color: #2d3748; margin-bottom: 15px; font-size: 1.2em;">💶 2. Les 5% reversés automatiquement par les ventes</h3>
+                    <div style="background: #f7fafc; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #000000;">
+                        <p style="font-style: italic; margin: 0; color: #4a5568;">"Soutenez mon projet de studio graphique mobile : 5% de votre café m'est reversé."</p>
+                    </div>
+                    <ul style="font-size: 1em; line-height: 1.6; margin: 0; padding-left: 20px; color: #4a5568;">
+                        <li>À chaque commande, les clients sélectionnent son projet au moment du paiement</li>
+                        <li><strong>→ 20 à 40 € par mois collectés automatiquement, sans sollicitation directe</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-card" style="padding: 25px;">
+                    <h3 style="color: #2d3748; margin-bottom: 15px; font-size: 1.2em;">🎁 3. Les dons directs via le mur interactif</h3>
+                    <ul style="font-size: 1em; line-height: 1.6; margin: 0; padding-left: 20px; color: #4a5568;">
+                        <li>Des clients curieux scannent son QR code ou utilisent la borne pour contribuer directement</li>
+                        <li>Certains lui donnent 2€, d'autres 10€, une cliente fan de design lui verse 50€ un jour</li>
+                        <li><strong>→ Clara collecte en moyenne 80 à 150 € de dons clients chaque mois</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #000000 0%, #2d3748 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 25px;">
+                <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.3em; color: white;">📊 Bilan annuel pour Clara :</h3>
+                <table style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden;">
+                    <thead>
+                        <tr style="background: rgba(255,255,255,0.2);">
+                            <th style="padding: 15px; text-align: left; color: white; font-weight: 600;">Source de revenu</th>
+                            <th style="padding: 15px; text-align: center; color: white; font-weight: 600;">Estimation annuelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <td style="padding: 12px; color: white;">Services clients Popey</td>
+                            <td style="padding: 12px; text-align: center; color: white; font-weight: bold;">4 800 €</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <td style="padding: 12px; color: white;">5% sur les ventes</td>
+                            <td style="padding: 12px; text-align: center; color: white; font-weight: bold;">480 €</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <td style="padding: 12px; color: white;">Dons directs</td>
+                            <td style="padding: 12px; text-align: center; color: white; font-weight: bold;">1 200 €</td>
+                        </tr>
+                        <tr style="background: rgba(255,215,0,0.2);">
+                            <td style="padding: 15px; color: #ffd700; font-weight: bold; font-size: 1.1em;">Total annuel estimé</td>
+                            <td style="padding: 15px; text-align: center; color: #ffd700; font-weight: bold; font-size: 1.2em;">6 480 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); color: #000000; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid #ffd700; box-shadow: 0 0 20px rgba(255,215,0,0.3);">
+                <h3 style="margin-bottom: 15px; font-size: 1.2em;">✨ Résultat :</h3>
+                <p style="font-size: 1.1em; font-weight: 500; margin: 0; line-height: 1.5;">Clara paie un poste de coworking à tarif doux, mais elle gagne bien plus qu'un bureau :<br><strong>de la visibilité, du financement participatif, des clients réguliers et un ancrage local fort.</strong></p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <img src="images/claraa.jpg" alt="Clara, graphiste coworkeuse Popey" style="max-width: 400px; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 3px solid #ffd700;">
+            </div>
+         
+         </div>
+         <script>
+             // Simulateur de participation clients
+             function updateClientSimulator() {
+                 const clientsParJour = document.getElementById('clients-jour').value;
+                 
+                 // Mise à jour de la valeur affichée
+                 document.getElementById('clients-value').textContent = clientsParJour;
+                 
+                 // Calcul des catégories
+                 const curieux = Math.floor(clientsParJour * 0.5);
+                 const engages = Math.floor(clientsParJour * 0.3);
+                 const petitsContrib = Math.floor(clientsParJour * 0.15);
+                 const grandsContrib = Math.floor(clientsParJour * 0.05);
+                 
+                 // Mise à jour des compteurs
+                 document.getElementById('curieux-count').textContent = curieux;
+                 document.getElementById('engages-count').textContent = engages;
+                 document.getElementById('petits-count').textContent = petitsContrib;
+                 document.getElementById('grands-count').textContent = grandsContrib;
+                 
+                 // Calculs financiers quotidiens
+                 const petitsDonsJour = petitsContrib * 3;
+                 const grandsDonsJour = grandsContrib * 20;
+                 const totalJour = petitsDonsJour + grandsDonsJour;
+                 
+                 // Mise à jour des montants quotidiens
+                 document.getElementById('petits-jour').textContent = petitsDonsJour + '€';
+                 document.getElementById('grands-jour').textContent = grandsDonsJour + '€';
+                 document.getElementById('total-jour').textContent = totalJour + '€';
+                 
+                 // Calculs annuels (basés sur fréquence moyenne)
+                 const petitsContribAnnuels = Math.floor(petitsContrib * 365 * 0.3); // 30% deviennent réguliers
+                 const grandsContribAnnuels = Math.floor(grandsContrib * 365 * 0.15); // 15% deviennent réguliers
+                 
+                 const petitsDonsAnnuels = petitsContribAnnuels * 3 * 4; // 4 fois par an
+                 const grandsDonsAnnuels = grandsContribAnnuels * 20 * 2; // 2 fois par an
+                 const totalAnnuel = petitsDonsAnnuels + grandsDonsAnnuels;
+                 
+                 // Mise à jour des montants annuels
+                 document.getElementById('petits-annuel').textContent = petitsDonsAnnuels.toLocaleString() + '€';
+                 document.getElementById('grands-annuel').textContent = grandsDonsAnnuels.toLocaleString() + '€';
+                 document.getElementById('total-annuel').textContent = totalAnnuel.toLocaleString() + '€';
+                 
+                 // Mise à jour du bilan total (si les éléments existent)
+                 if (document.getElementById('total-participatif-annuel')) {
+                     document.getElementById('total-participatif-annuel').textContent = totalAnnuel.toLocaleString() + '€';
+                     updateTotalGlobal();
+                 }
+             }
+             
+             // Event listener
+             document.getElementById('clients-jour').addEventListener('input', updateClientSimulator);
+             
+             // Initialisation
+             updateClientSimulator();
+             
+             // Fonction pour mettre à jour le total global
+             function updateTotalGlobal() {
+                 const reversementElement = document.getElementById('total-reversement-annuel');
+                 const participatifElement = document.getElementById('total-participatif-annuel');
+                 const totalGlobalElement = document.getElementById('total-global-annuel');
+                 const projetsElement = document.getElementById('projets-total-annuel');
+                 const moyenneElement = document.getElementById('moyenne-projet');
+                 
+                 if (reversementElement && participatifElement && totalGlobalElement) {
+                     // Extraction des montants (suppression des € et des espaces)
+                     const reversement = parseFloat(reversementElement.textContent.replace(/[€\s,]/g, '').replace(/\./g, '')) || 0;
+                     const participatif = parseFloat(participatifElement.textContent.replace(/[€\s,]/g, '').replace(/\./g, '')) || 0;
+                     const servicesCoworkers = 72000; // Montant fixe du simulateur de services coworkers
+                     
+                     const totalGlobal = reversement + participatif + servicesCoworkers;
+                     
+                     // Mise à jour du total global
+                     totalGlobalElement.textContent = totalGlobal.toLocaleString() + '€';
+                     
+                     // Nombre fixe de projets disponibles (4 par mois = 48 par an)
+                      const totalProjets = 48;
+                      
+                      projetsElement.textContent = totalProjets;
+                      
+                      // Calcul de la moyenne par projet
+                      const moyenneParProjet = totalProjets > 0 ? Math.round(totalGlobal / totalProjets) : 0;
+                      moyenneElement.textContent = moyenneParProjet + '€';
+                 }
+             }
+         </script>
+ 
+         <!-- Slide 7: Traction & Marché -->
+        <div class="slide">
+            <div class="slide-number">7 / 16</div>
+            <div class="slide-header">
+                <div class="slide-icon">📈</div>
+                <h1>Traction & Marché</h1>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">Clients</div>
+                    <div class="stat-label">100 clients/jour, c'est le but à atteindre. <br> Nous obtiendront ce nombre grace aux :<br>
+                         3 blocs (coiffeur, masseur, prothèsiste ongulaire), ils nous amenerons une <strong>50ne de clients/jour</strong>.<br>
+                        Les coworkers inviteront leurs clients, prospects, famille, amis (100 coworkers) : <strong>50 clients/jour </strong><br>
+                        Les passants, bouche à oreille, ....</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Coworkers</div>
+                    <div class="stat-label">3 millions, c'est le nombre d'indépendants en recherche de visibilité et premiers clients</div>
+                </div>
+                
+            </div>
+            
+            <div class="highlight-card">
+                <h2>Traction Early Stage</h2>
+                <ul>
+                    <li>1 client sur 3 interagit avec un projet local</li>
+                    <li>15 à 20% des coworkers trouvent leur premier client</li>
+                    <li>Taux de retour client augmente de 20% avec le suivi de projet</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 8: Modèle économique -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">8 / 16</div>
+                <div class="slide-icon">💼</div>
+                <h1>Business Model</h1>
+            </div>
+            
+            <div class="highlight-card">
+                <h2>Projections de Revenus</h2>
+                <table style="width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px;">
+                    <thead>
+                        <tr style="background: linear-gradient(135deg, #000000 0%, #404040 100%); color: white;">
+                            <th style="padding: 15px; text-align: left; border: 1px solid #ddd;">Source de Revenus</th>
+                            <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">Année 1</th>
+                            <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">Année 2</th>
+                            <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">Année 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 12px; border: 1px solid #ddd;">☕ Cafés (80/jour)</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #fbfbfb; font-weight: bold;">73 000€</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #fefefe; font-weight: bold;">91 250€</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #fcfcfb; font-weight: bold;">109 500€</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;">Croissants fourrés (40/jour)</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">32 120€</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">40 150€</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">48 180€</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;">🥗 Salades & Snacking (50/jour)</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">118 625€</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">166 075€</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">201 662€</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 12px; border: 1px solid #ddd;">💼 Coworking (200€HT/mois) +<br> location meeting-room</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">97 596€</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">114 589€</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">106 655€</td>
+                        </tr>
+                       
+                        <tr style="background: linear-gradient(135deg, #000000 0%, #404040 100%); color: white; font-weight: bold;">
+                            <td style="padding: 15px; border: 1px solid #ddd;">📊 TOTAL CA</td>
+                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd; font-size: 13px; color: #edc70b;">321 341€</td>
+                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd; font-size: 13px; color: #edc70b;">395 071€</td>
+                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd; font-size: 13px; color: #edc70b;">456 938€</td>
+                        </tr>
+                        <tr style="background-color: #e8f5e8;">
+                            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">💰 RÉSULTAT NET</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold; color: #28a745;">100 374€</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold; color: #28a745;">146 846€</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold; color: #28a745;">170 021€</td>
+                        </tr>
+                        <tr style="background-color: #f0f8ff;">
+                            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">📈 Marge Nette (%)</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold; color: #007bff;">31,2%</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold; color: #007bff;">35,3%</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold; color: #007bff;">35,8%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-card">
+                <h2>📈 Projection des Bénéfices sur 5 ans</h2>
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px;">
+            <thead>
+                <tr style="background: linear-gradient(135deg, #000000 0%, #404040 100%); color: white;">
+                    <th style="padding: 15px; text-align: left; border: 1px solid #ddd;">Année</th>
+                    <th style="padding: 15px; text-align: left; border: 1px solid #ddd;">Nb de Popey</th>
+                    <th style="padding: 15px; text-align: left; border: 1px solid #ddd;">Bénéfice annuel total</th>
+                    <th style="padding: 15px; text-align: left; border: 1px solid #ddd;">Bénéfice cumulé</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 12px; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">100 000 €</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">100 000 €</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 12px; border: 1px solid #ddd;">2</td>
+                   <td style="padding: 12px; border: 1px solid #ddd;">3</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">300 000 €</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">400 000 €</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 12px; border: 1px solid #ddd;">3</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">5</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">500 000 €</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">900 000 €</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 12px; border: 1px solid #ddd;">4</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">8</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">800 000 €</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">1 700 000 €</td>
+                </tr>
+                <tr style="background: #e8f5e8; font-weight: bold;">
+                    <td style="padding: 12px; border: 1px solid #ddd;">5</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">10</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">1 000 000 €</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">2 700 000 €</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div style="text-align: center; margin: 20px 0;">
+            <strong style="color: #2c5aa0; font-size: 18px;">➡️ Bénéfice net cumulé sur 5 ans = 2 700 000 €</strong>
+        </div>
+    </div>
+            
+            <div class="highlight-card">
+                <h2>Indicateurs Clés</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">100</div>
+                        <div class="stat-label">Ventes Cafés/Croissants/Salades...<br>Snacks/Jour</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">30</div>
+                        <div class="stat-label">Abonnés Coworking (sur 80 disponibles)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">+30%</div>
+                        <div class="stat-label">Marge nette</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" >1</div>
+                        <div class="stat-label" >1 seul employé par Popey</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-card">
+                <h2>Effet Flywheel</h2>
+                <p>Bien entendu, nous ne voulons ni nous arreter à 10 Popey ni avoir seulement 100 clients/jours. Notre but et de lancer ce model en franchise et faire de Popey la plus grande franchise de coffeeshop/coworking de france. </div>
+        </div>
+
+        <!-- Slide 8: Go-to-Market -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">9 / 16</div>
+                <div class="slide-icon">🚀</div>
+                <h1>Go-to-Market Strategy</h1>
+            </div>
+            
+            <div class="phase-container">
+                <div class="phase-card">
+                    <div class="phase-title">Phase 1: Pilote (M0-M6)</div>
+                    <ul>
+                        <li>Ouverture 1er lieu</li>
+                        <li>Déploiement MVP app + mur interactif</li>
+                        <li>Lancement programme coworker-mentor</li>
+                        <li>Test du modèle économique</li>
+                        <li>Validation produit-marché</li>
+                    </ul>
+                </div>
+                                     
+                <div class="phase-card">
+                    <div class="phase-title">Phase 2: Réplication (M6-M18)</div>
+                    <ul>
+                        <li>2 nouveaux lieux en grandes villes</li>
+                        <li>App mobile version 1.0</li>
+                        <li>Réseau d'ambassadeurs</li>
+                        <li>Corners Popey dans cafés partenaires</li>
+                    </ul>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-title">Phase 3: Plateforme (M18-M36)</div>
+                    <ul>
+                        <li>App accessible partout</li>
+                        <li>Réseau franchisé/licencié</li>
+                        <li>Monétisation B2B (RSE, formation)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Positionnement concurrentiel -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">10 / 16</div>
+                <div class="slide-icon">🏆</div>
+                <h1>Positionnement Concurrentiel</h1>
+            </div>
+            
+            <div class="competitor-grid">
+                <div class="competitor-card">
+                    <div class="competitor-name">Cafés classiques</div>
+                    <p><strong>Modèle:</strong> F&B pur</p>
+                    <p><strong>Limites:</strong> Lieu de passage, aucun impact ni engagement</p>
+                </div>
+                <div class="competitor-card">
+                    <div class="competitor-name">Coworking (WeWork, Wojo)</div>
+                    <p><strong>Modèle:</strong> Location bureaux</p>
+                    <p><strong>Limites:</strong> Déconnecté du quartier et des clients</p>
+                </div>
+                <div class="competitor-card">
+                    <div class="competitor-name">Plateformes freelances</div>
+                    <p><strong>Modèle:</strong> Matching en ligne</p>
+                    <p><strong>Limites:</strong> Déshumanisé, faible visibilité locale</p>
+                </div>
+                <div class="competitor-card">
+                    <div class="competitor-name">Crowdfunding</div>
+                    <p><strong>Modèle:</strong> Financement de projets</p>
+                    <p><strong>Limites:</strong> Complexe, engagement ponctuel</p>
+                </div>
+            </div>
+            
+            <div class="usp-highlight">
+                <h2>Proposition de valeur unique</h2>
+                <div class="usp-features">
+                    <div class="usp-feature">Hyperlocal</div>
+                    <div class="usp-feature">Ultra accessible</div>
+                    <div class="usp-feature">Quotidien</div>
+                    <div class="usp-feature">Impact mesurable</div>
+                </div>
+                <p style="background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); color: #000000; padding: 30px; border-radius: 15px; text-align: center; border: 3px solid #ffd700; box-shadow: 0 0 20px rgba(255,215,0,0.3);"><strong>Popey combine les 4 univers en un seul écosystème vivant</strong></p>
+            </div>
+
+             <div style="text-align: center; margin-top: 30px;">
+                    <h3 style="color: #000000; margin-bottom: 20px; font-size: 1.3em;">💰 Les différences concurrentielles financières pour un coworker Popey</h3>
+                    <img src="images/differences.png" alt="Différences Popey - Côté Coworkers" style="max-width: 50%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 2px solid #000000;">
+                </div>
+        </div>
+
+        <!-- Slide 11: Vision & Ambition -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">11 / 16</div>
+                <div class="slide-icon">🌟</div>
+                <h1>Vision & Ambition</h1>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">Court terme</div>
+                    <div class="stat-label">3 lieux rentables • 125 coworkers • 100K clients/an • 150 projets soutenus</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Moyen terme</div>
+                    <div class="stat-label">10 Popey • 4.5M€ collectés • Marketplace intégrée • Monétisation B2B</div>
+                </div>
+            </div>
+            
+            <div class="vision-quote">
+                Chaque café devient un investissement dans son quartier
+            </div>
+            <div class="vision-quote">Popey devient un réseau de cafés propulseurs, une plateforme d'amorçage local et un réseau d'ambassadeurs</div>
+             
+
+              <!-- Slide 12: equipe -->
+                <div class="slide">
+                    <div class="slide-header">
+                <div class="slide-number">12 / 16</div>
+           <div class="slide-icon">👥</div>
+                <h1>Équipe</h1>
+            </div> 
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-role">Fondateur / CEO</div>
+                    <div class="team-name">Jean Philippe Roth</div>
+                    <p>
+                        Ingénieur front-end (UX orientée terrain pour usage rapide et fluide).
+                        Expérience en restauration (3 restaurants) et entrepreneuriat local. </p>
+                </div>
+                <div class="team-card">
+                    <div class="team-role">Co-fondateur</div>
+                    <div class="team-name">Nicolas Roth</div>
+                    <p>Commercial et animateur réseaux. Expérience en restauration (1 restaurant)</p>
+                </div>
+            </div>
+            
+            <div class="highlight-card">
+                <h2>Conseillers & Mentors</h2>
+                <ul>
+                    <li>Davy Manso : Ingenieur back-end</li>
+                    <li>Investisseur early-stage</li>
+                    <li>Coach impact & RSE</li>
+                </ul>
+                <p><strong>Ambition:</strong> Équipe agile, pluridisciplinaire et implantée localement</p>
+            </div>
+        </div>
+         
+
+        <!-- Slide 13: Financement -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">13 / 16</div>
+                <div class="slide-icon">💰</div>
+                <h1>Besoins & Utilisation des Fonds</h1>
+            </div>
+            
+            <div class="highlight-card">
+                <h2>Levée visée : 170 000 € – Seed (pré-amorçage)</h2>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <img src="images/popey_lieu.png" alt="Lieu Popey" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            </div>
+            <br>
+             
+            
+            <div class="funding-breakdown">
+                <div class="funding-item">
+                    <span>Aménagement lieu pilote (aménagement + machines + mobilier)</span>
+                    <span class="amount">150 000 €</span>
+                </div>
+                <div class="funding-item">
+                    <span>Développement plateforme MVP</span>
+                    <span class="amount">0 € (valeur = 80 000€)</span>
+                </div>
+                <div class="funding-item">
+                    <span>Lancement marketing</span>
+                    <span class="amount">10 000 €</span>
+                </div>
+                <div class="funding-item">
+                    <span>Trésorerie / Imprévus</span>
+                    <span class="amount">10 000 €</span>
+                </div>
+                <div class="funding-item">
+                    <span>Total nécessaire</span>
+                    <span class="amount">170 000 €</span>
+                </div>
+            </div>
+            
+            <div class="highlight-card">
+                <p>Mobilier, robots, murs interactifs, réseaux, affichage, RP, micro-influence</p>
+            </div>
+        </div>
+
+        <!-- Slide 14: Roadmap -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">14 / 16</div>
+                <div class="slide-icon">🗓️</div>
+                <h1>Roadmap</h1>
+            </div>
+            
+            <div class="timeline-period">
+                <h2>Roadmap 2025–2028</h2>
+                <p>De l'ouverture du premier lieu au déploiement national</p>
+            </div>
+                        
+                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">T3–T4 2025</div>
+                        <p>Ouverture 1er lieu à St Paul les dax (Grand Mail, à coté d'action : 5000 passages jour)<br>
+                            • Déploiement MVP app + mur • Lancement programme coworker-mentor</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">T3–T4 2026</div>
+                        <p>+1 à 2 nouveaux lieux • 100 projets soutenus • App mobile V1 grand public</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">2027</div>
+                        <p>10 lieux / corners Popey • Partenariats écoles / RSE entreprises • 1M€ redistribués en micro-financements</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">2028</div>
+                        <p>Déploiement national global • Modèle franchise/licence • Marketplace hybride du café utile</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 15: Avantages pour la ville -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">15 / 16</div>
+                <div class="slide-icon">🏛️</div>
+                <h1>Ce que Popey apporte à la ville qui l'accueille</h1>
+            </div>
+            
+            <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 30px;">
+                <div class="highlight-card" style="padding: 20px;">
+                    <h3 style="color: #2d3748; margin-bottom: 15px; font-size: 1.1em;">💼 1. Soutien à l'économie locale</h3>
+                    <ul style="font-size: 0.9em; line-height: 1.5; margin: 0; padding-left: 20px;">
+                        <li>Génère un revenu direct pour les indépendants, freelances, artisans locaux (coworkers)</li>
+                        <li>Favorise l'émergence de micro-entreprises solides, ancrées dans leur territoire</li>
+                        <li>Encourage la consommation locale grâce aux choix de soutien client</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-card" style="padding: 20px;">
+                    <h3 style="color: #2d3748; margin-bottom: 15px; font-size: 1.1em;">👥 2. Dynamisation de la vie de quartier</h3>
+                    <ul style="font-size: 0.9em; line-height: 1.5; margin: 0; padding-left: 20px;">
+                        <li>Crée un lieu de vie attractif au quotidien pour les habitants : café, détente, rencontres</li>
+                        <li>Devient un point de rencontre intergénérationnel, social et professionnel</li>
+                        <li>Fait revivre des lieux vacants ou sous-utilisés (entrepôts, friches, etc.)</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-card" style="padding: 20px;">
+                    <h3 style="color: #2d3748; margin-bottom: 15px; font-size: 1.1em;">📈 3. Innovation sociale et engagement citoyen</h3>
+                    <ul style="font-size: 0.9em; line-height: 1.5; margin: 0; padding-left: 20px;">
+                        <li>Met en place un modèle de financement participatif simplifié, accessible à tous</li>
+                        <li>Permet aux citoyens de soutenir les projets concrets de leur ville en consommant simplement</li>
+                        <li>Crée un lien émotionnel et financier entre les habitants et les porteurs de projets locaux</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-card" style="padding: 20px;">
+                    <h3 style="color: #2d3748; margin-bottom: 15px; font-size: 1.1em;">🌍 4. Image de ville innovante & durable</h3>
+                    <ul style="font-size: 0.9em; line-height: 1.5; margin: 0; padding-left: 20px;">
+                        <li>Renforce l'image d'une ville moderne, inclusive, tournée vers l'innovation sociale</li>
+                        <li>Valorise la circulation de valeur locale : pas de fuite vers des plateformes géantes ou des sièges lointains</li>
+                        <li>Peut devenir un modèle duplicable à l'échelle de l'agglomération ou d'un réseau de tiers-lieux</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-card" style="padding: 20px;">
+                    <h3 style="color: #2d3748; margin-bottom: 15px; font-size: 1.1em;">🧠 5. Attraction de talents et de jeunes actifs</h3>
+                    <ul style="font-size: 0.9em; line-height: 1.5; margin: 0; padding-left: 20px;">
+                        <li>Donne envie aux freelances, jeunes entrepreneurs ou talents nomades de s'installer dans la ville</li>
+                        <li>Offre un cadre de travail inspirant, convivial, et économiquement avantageux</li>
+                        <li>Contribue à freiner l'exode des compétences vers les métropoles</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-card" style="padding: 20px;">
+                    <h3 style="color: #2d3748; margin-bottom: 15px; font-size: 1.1em;">🏛️ 6. Complémentarité avec les politiques publiques</h3>
+                    <ul style="font-size: 0.9em; line-height: 1.5; margin: 0; padding-left: 20px;">
+                        <li>Peut s'intégrer dans des programmes de revitalisation des centres-villes</li>
+                        <li>Accompagne les objectifs de développement économique local ou ESS</li>
+                        <li>Crée des synergies possibles avec des structures d'accompagnement, écoles ou municipalités</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-card" style="background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); color: #000000; padding: 30px; border-radius: 15px; text-align: center; border: 3px solid #ffd700; box-shadow: 0 0 20px rgba(255,215,0,0.3);">
+                <h2 style="margin-bottom: 15px; font-size: 1.3em;">🚀 En résumé :</h2>
+                <p style="font-size: 1.1em; font-weight: bold; margin: 0;">Un lieu comme Popey, c'est un moteur discret mais puissant de redynamisation urbaine, de création de liens sociaux et de génération de richesse locale.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 16: Contact -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">16 / 16</div>
+                <div class="slide-icon">📞</div>
+                <h1>Contact</h1>
+            </div>
+            
+            <div class="hero-section">
+                <div class="logo">POPEY</div>
+                <div class="tagline">Merci pour votre attention</div>
+            </div>
+            
+            <div class="highlight-card">
+                <h2>Restons en contact</h2>
+                <p>Pour toute question ou pour rejoindre l'aventure POPEY</p>
+                <p>Jean Philippe Roth : 07 68 23 33 47</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+        
+           
